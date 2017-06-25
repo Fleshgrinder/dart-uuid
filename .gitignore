@@ -1,0 +1,5 @@
+/.pub/
+/build/
+/doc/api/
+/.packages
+/pubspec.lock
