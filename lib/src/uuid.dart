@@ -175,7 +175,7 @@ class Uuid implements Comparable<Uuid> {
   /// - [RFC 4122 Section 4.3](https://tools.ietf.org/html/rfc4122#section-4.3)
   /// - [Wikipedia: Version 5 UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Versions_3_and_5_.28namespace_name-based.29)
   factory Uuid.v5(Uuid namespace, String name) =>
-      new Uuid._(sha1.convert('${namespace.toBinary()}$name'.codeUnits).bytes)
+      new Uuid._(sha1.convert('${namespace.toBinary()}$name'.codeUnits).bytes.take(16))
           .withVariant(UuidVariant.rfc4122)
           .withVersion(UuidVersion.sha1);
 
